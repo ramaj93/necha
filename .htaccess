@@ -1,17 +1,22 @@
-Options -Indexes
+Options +FollowSymlinks
+RewriteEngine On
 
-<IfModule mod_rewrite.c> 
-  RewriteEngine on
+# deal with admin first
+RewriteCond %{REQUEST_URI} ^/necha/(admin) 
+RewriteRule ^admin/assets/(.*)$ backend/web/assets/$1 [L]
+RewriteRule ^admin/css/(.*)$ backend/web/css/$1 [L]
 
-  RewriteCond %{REQUEST_URI} !^public
-  RewriteRule ^(.*)$ frontend/web/$1 [L] 
-</IfModule>
+RewriteCond %{REQUEST_URI} !^/necha/backend/web/(assets|css)/  
+RewriteCond %{REQUEST_URI} ^/necha/(admin)  
+RewriteRule ^.*$ backend/web/$1 [L]
 
-# Deny accessing below extensions
-<Files ~ "(.json|.lock|.git)">
-Order allow,deny
-Deny from all
-</Files>
 
-# Deny accessing dot files
-RewriteRule (^\.|/\.) - [F]
+RewriteCond %{REQUEST_URI} ^necha/(assets|css)  
+RewriteRule ^assets/(.*)$ frontend/web/assets/$1 [L]
+RewriteRule ^css/(.*)$ frontend/web/css/$1 [L]
+
+RewriteCond %{REQUEST_URI} !^necha/(frontend|backend)/web/(assets|css)/  
+RewriteCond %{REQUEST_URI} !index.php
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ frontend/web/$1 [L] 

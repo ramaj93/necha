@@ -7,15 +7,15 @@ a site called [Della](http://www.dellala.com)
 
 FEATURES
 --------
-*Product Management
-*A cart system with basic checkout
-*Integration with PayPal
-*Integration with Mobile Money
+* Product Management
+* A cart system with basic checkout
+* Integration with PayPal
+* Integration with Mobile Money
 
 OPTIONAL FEATURES
 -----------------
-*Customer Tracking
-*Dynamic Layout
+* Customer Tracking
+* Dynamic Layout
 
 
 
