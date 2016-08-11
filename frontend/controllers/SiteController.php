@@ -72,7 +72,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = 'necha';
         return $this->render('index');
     }
 
@@ -210,5 +209,13 @@ class SiteController extends Controller
         return $this->render('resetPassword', [
             'model' => $model,
         ]);
+    }
+    
+    public function actionAccount(){
+        
+    }
+    
+    public function actionCheckout(){
+        
     }
 }
