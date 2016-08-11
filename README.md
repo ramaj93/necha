@@ -1,16 +1,23 @@
-Yii 2 Advanced Project Template
+Necha Online Store
 ===============================
+DESCRIPTION
+-----------
+A basic online store for a local fashion brand **NECHA**. The client has requested the frontend be similar to 
+a site called [Della](http://www.dellala.com)
 
-Yii 2 Advanced Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-developing complex Web applications with multiple tiers.
+FEATURES
+--------
+*Product Management
+*A cart system with basic checkout
+*Integration with PayPal
+*Integration with Mobile Money
 
-The template includes three tiers: front end, back end, and console, each of which
-is a separate Yii application.
+OPTIONAL FEATURES
+-----------------
+*Customer Tracking
+*Dynamic Layout
 
-The template is designed to work in a team development environment. It supports
-deploying the application in different environments.
 
-Documentation is at [docs/guide/README.md](docs/guide/README.md).
 
 [![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-app-advanced/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-advanced/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
