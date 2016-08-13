@@ -1,12 +1,17 @@
 Options +FollowSymlinks
 RewriteEngine On
 
+
 # deal with admin first
-RewriteCond %{REQUEST_URI} ^/necha/(admin) 
+RewriteCond %{REQUEST_URI} ^/necha/(admin)
 RewriteRule ^admin/assets/(.*)$ backend/web/assets/$1 [L]
 RewriteRule ^admin/css/(.*)$ backend/web/css/$1 [L]
+RewriteRule ^admin/js/(.*)$ backend/web/js/$1 [L]
+RewriteRule ^admin/fonts/(.*)$ backend/web/fonts/$1 [L]
+RewriteRule ^admin/img/(.*)$ backend/web/img/$1 [L]
+#RewriteRule ^admin/(.*)$ backend/web/$1 [L]
 
-RewriteCond %{REQUEST_URI} !^/necha/backend/web/(assets|css)/  
+RewriteCond %{REQUEST_URI} !^/necha/backend/web/(assets|css|img|js|fonts)/  
 RewriteCond %{REQUEST_URI} ^/necha/(admin)  
 RewriteRule ^.*$ backend/web/$1 [L]
 
@@ -20,3 +25,7 @@ RewriteCond %{REQUEST_URI} !index.php
 RewriteCond %{REQUEST_FILENAME} !-f [OR]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ frontend/web/$1 [L] 
+
+#force forward slash
+
+RewriteRule ^[^/]+$ %{REQUEST_URI}/ [L,R=301]

@@ -18,6 +18,7 @@ use frontend\models\ContactForm;
  */
 class SiteController extends Controller
 {
+    //public $layout = "main_bak";
     /**
      * @inheritdoc
      */

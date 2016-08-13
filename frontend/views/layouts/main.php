@@ -47,7 +47,7 @@ AppAsset::register($this);
         <!-- jQuery and jQuery fallback -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="js/app.js" type="text/javascript"></script>
-        <script src="option_selection.js" type="text/javascript"></script>
+        <script src="js/option_selection.js" type="text/javascript"></script>
 
         <script type="text/javascript" src="//cdn.shopify.com/s/assets/themes_support/ga_urchin_forms-668547562549a84f5dfa01ef82607987f85ecbe1c8301faf25059becfa208199.js"></script>
 
