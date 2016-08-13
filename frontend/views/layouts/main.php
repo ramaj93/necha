@@ -123,16 +123,14 @@ AppAsset::register($this);
 
 
 
-                        <li><a href="/pages/get-involved" title="Get Involved" >Get Involved</a></li>
+                        <li><a href="/pages/get-involved" title="Get Involved" >Contact Us</a></li>
 
 
 
-                        <li><a href="/blogs/news" title="Blog" >Blog</a></li>
 
 
 
-                        <li><a href="/pages/gallery" title="Lookbook"  >Lookbook 
-                                <span class="arrow">&or;</span></a> 
+                     
                             <ul>
 
 
