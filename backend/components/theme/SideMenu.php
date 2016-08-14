@@ -51,22 +51,6 @@ use yii\helpers\ArrayHelper;
 class SideMenu extends \yii\widgets\Menu
 {
 
-    /**
-     * Panel contextual states
-     */
-    const TYPE_DEFAULT = 'default';
-    const TYPE_PRIMARY = 'primary';
-    const TYPE_INFO = 'info';
-    const TYPE_SUCCESS = 'success';
-    const TYPE_DANGER = 'danger';
-    const TYPE_WARNING = 'warning';
-
-    /**
-     * @var string the menu container style. This is one of the bootstrap panel
-     * contextual state classes. Defaults to `default`.
-     * @see http://getbootstrap.com/components/#panels
-     */
-    public $type = self::TYPE_DEFAULT;
 
     /**
      * @var string prefix for the icon in [[items]]. This string will be prepended
@@ -133,12 +117,7 @@ class SideMenu extends \yii\widgets\Menu
      * Allowed panel stypes
      */
     private static $_validTypes = [
-        self::TYPE_DEFAULT,
-        self::TYPE_PRIMARY,
-        self::TYPE_INFO,
-        self::TYPE_SUCCESS,
-        self::TYPE_DANGER,
-        self::TYPE_WARNING,
+
     ];
 
     public function init()
@@ -159,16 +138,7 @@ class SideMenu extends \yii\widgets\Menu
      */
     public function run()
     {
-        $heading = '';
-        if (isset($this->heading) && $this->heading != '') {
-            Html::addCssClass($this->headingOptions, 'panel-heading');
-            $heading = Html::tag('div', '<h3 class="panel-title">' . $this->heading . '</h3>', $this->headingOptions);
-        }
-        $body = $this->renderMenu();//, ['class' => 'table']);
-        $type = in_array($this->type, self::$_validTypes) ? $this->type : self::TYPE_DEFAULT;
-        Html::addCssClass($this->containerOptions, "panel panel-{$type}");
-        echo $body;
-        //echo Html::tag('div', $heading . $body, $this->containerOptions);
+        echo $this->renderMenu();//, ['class' => 'table']);
     }
 
     /**

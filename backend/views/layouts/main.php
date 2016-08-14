@@ -73,8 +73,8 @@ $bundle = AppAsset::register($this);
                                 <li><a href="#" >Accounts</a></li>
                                 <li><a href="#" >Currencies</a></li>
                                 <li><a href="#" >Countries</a></li>
-                                <li><a href="">Taxes</a></li>
                                 <li><a href="">Regions</a></li>
+                                <li><a href="">Taxes</a></li>
                                 <li><a href="">Zones</a></li>
                                 <li class="divider"></li>
                                 <li><a href="">Store Setting</a></li>
@@ -139,7 +139,7 @@ $bundle = AppAsset::register($this);
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
                                 <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                                    <img src="<?=$bundle->baseUrl?>/img/a0.jpg" alt="...">
+                                    <img src="<?= $bundle->baseUrl ?>/img/a0.jpg" alt="...">
                                     <i class="on md b-white bottom"></i>
                                 </span>
                                 <span class="hidden-sm hidden-md">John.Smith</span> <b class="caret"></b>
@@ -259,6 +259,22 @@ $bundle = AppAsset::register($this);
                                         'items' => [
                                             ['label' => 'Categories', 'icon' => 'cubes', 'url' => ['category/index']],
                                             ['label' => 'Items', 'icon' => 'tags', 'url' => ['product/index']],
+                                        ],
+                                    ],
+                                    [
+                                        'label' => 'Sales',
+                                        'icon' => 'money',
+                                        'items' => [
+                                            ['label' => 'Orders', 'icon' => 'gift', 'url' => ['order/index']],
+                                            ['label' => 'Transactions', 'icon' => 'credit-card', 'url' => ['payment/index']],
+                                        ],
+                                    ],
+                                    [
+                                        'label' => 'People',
+                                        'icon' => 'group',
+                                        'items' => [
+                                            ['label' => 'Customers', 'icon' => 'male', 'url' => ['customer/index']],
+                                            ['label' => 'Users', 'icon' => 'users', 'url' => ['user/index']],
                                         ],
                                     ],
                                 ],

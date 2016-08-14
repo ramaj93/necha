@@ -47,7 +47,7 @@ class Product extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['category_id', 'created_by'], 'required'],
+            [['category_id', 'name','alert_quantity'], 'required'],
             [['category_id', 'has_size', 'alert_quantity', 'created_by'], 'integer'],
             [['weight'], 'number'],
             [['description'], 'string'],
@@ -66,7 +66,7 @@ class Product extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'category_id' => Yii::t('app', 'Category ID'),
+            'category_id' => Yii::t('app', 'Category'),
             'name' => Yii::t('app', 'Name'),
             'weight' => Yii::t('app', 'Weight'),
             'status' => Yii::t('app', 'Status'),

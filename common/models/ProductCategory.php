@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "product_category".
@@ -55,5 +56,10 @@ class ProductCategory extends \yii\db\ActiveRecord
     public function getProducts()
     {
         return $this->hasMany(Product::className(), ['category_id' => 'id']);
+    }
+    
+    public static  function getAllActive(){
+        $model =  ProductCategory::find()->all();
+        return ArrayHelper::map($model,'id','name');
     }
 }
