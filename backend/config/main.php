@@ -7,7 +7,7 @@ $params = array_merge(
 return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
-    'name'=>'Necha Online Store',
+    'name' => 'Necha Online Store',
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
@@ -48,6 +48,15 @@ return [
             'class' => 'yii\web\UrlManager',
             'baseUrl' => '/necha/',
         ],
+//        'assetManager' => [
+//            'bundles' => [
+//                'yii\web\JqueryAsset' => [
+//                    'sourcePath' => 'js/jquery.min.js', // do not publish the bundle
+//                    'js' => [
+//                    ]
+//                ],
+//            ],
+//        ]
     ],
     'params' => $params,
 ];

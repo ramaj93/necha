@@ -7,17 +7,20 @@ use yii\web\AssetBundle;
 /**
  * Main frontend application asset bundle.
  */
-class AppAsset extends AssetBundle
-{
+class AppAsset extends AssetBundle {
+
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
+        'css/theme.css',
     ];
     public $js = [
+        'js/jquery.min.js',
+        'js/app.js',
+        'js/option_selection.js'
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+       // "yii\web\JqueryAsset"
     ];
+
 }

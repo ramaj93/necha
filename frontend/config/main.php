@@ -1,14 +1,12 @@
 <?php
+
 $params = array_merge(
-    require(__DIR__ . '/../../common/config/params.php'),
-    require(__DIR__ . '/../../common/config/params-local.php'),
-    require(__DIR__ . '/params.php'),
-    require(__DIR__ . '/params-local.php')
+        require(__DIR__ . '/../../common/config/params.php'), require(__DIR__ . '/../../common/config/params-local.php'), require(__DIR__ . '/params.php'), require(__DIR__ . '/params-local.php')
 );
 
 return [
     'id' => 'app-frontend',
-    'name'=>'Necha Online Store',
+    'name' => 'Necha Online Store',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
@@ -38,16 +36,20 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        
+        'cache' => array(
+            'class' => 'yii\caching\DbCache'
+        ),
+        'site'=>array(
+            'class'=>'app\components\Site'
+        ),
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'account'=>'site/account',
-                'checkout'=>'site/checkout'
+                'account' => 'site/account',
+                'checkout' => 'site/checkout'
             ],
         ],
-        
     ],
     'params' => $params,
 ];

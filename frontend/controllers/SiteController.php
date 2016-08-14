@@ -12,12 +12,18 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use common\models\SiteSetting;
 
 /**
  * Site controller
  */
 class SiteController extends Controller
 {
+    
+    public function __construct($id, $module, $config = array()) {
+        parent::__construct($id, $module, $config);
+    }
+
     //public $layout = "main_bak";
     /**
      * @inheritdoc

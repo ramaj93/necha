@@ -12,58 +12,43 @@ use common\widgets\Alert;
 
 AppAsset::register($this);
 ?>
+<?php $this->beginPage() ?>
 <!doctype html>
-<html lang="en">  
+<html lang="<?= Yii::$app->language ?>">  
     <head>
-        <meta charset="utf-8">
+        <meta charset="<?= Yii::$app->charset ?>">
         <meta http-equiv="cleartype" content="on">
         <meta name="robots" content="index,follow">
-        <title><?= Html::encode($this->title) ?></title>
-        <meta name="description" content="Della is a fashion line handcrafted by a community in Ghana, West Africa. The passionate, talented women who create the pieces are given an opportunity to build" />
+        <title><?= Html::encode(Yii::$app->site->name) ?></title>
+        <meta name="description" content="<?= Yii::$app->site->description?>" />
         <meta property="og:image" content="favicon.ico" />     
-        <meta property="og:url" content="<?php echo \yii\helpers\Url::base() ?>" />
-        <meta property="og:title" content="Della | Carry Change" />
-        <meta property="og:description" content="Della is a fashion line handcrafted by a community in Ghana, West Africa. The passionate, talented women who create the pieces are given an opportunity to build" />
+        <meta property="og:url" content="<?= Url::base() ?>" />
+        <meta property="og:title" content="<?= Yii::$app->site->title?>" />
+        <meta property="og:description" content="<?= Yii::$app->site->description?>" />
         <meta property="og:type" content="website" />
-        <meta name="author" content="Monica Katzenell">
+        <meta name="author" content="CoreIT">
+
+        <?= Html::csrfMetaTags() ?>
 
         <!-- Mobile Specific Metas -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
 
+        <?php $this->head() ?>
         <!-- Stylesheets -->
-        <link href="css/theme.css" rel="stylesheet" type="text/css"  media="all"  />
 
         <!-- Icons -->
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
         <link rel="canonical" href="<?php echo Url::canonical(); ?>" />
 
         <!-- Custom Fonts -->
-        <link href='//fonts.googleapis.com/css?family=.|Oswald:light,normal,bold|Oswald:light,normal,bold|Oswald:light,normal,bold|Droid+Serif:light,normal,bold' rel='stylesheet' type='text/css'>
+        <link href='css/font.css' rel='stylesheet' type='text/css'>
 
-
-
-        <!-- jQuery and jQuery fallback -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script src="js/app.js" type="text/javascript"></script>
-        <script src="js/option_selection.js" type="text/javascript"></script>
-
-        <script type="text/javascript" src="//cdn.shopify.com/s/assets/themes_support/ga_urchin_forms-668547562549a84f5dfa01ef82607987f85ecbe1c8301faf25059becfa208199.js"></script>
 
     </head>
     <body>
-        <div id="fb-root"></div>
-        <script>(function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id))
-                    return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
-
+        <?php $this->beginBody() ?>
         <div class="top_bar">
             <div class="container">
 
@@ -86,7 +71,7 @@ AppAsset::register($this);
 
         <div class="container content"> 
             <div class="sixteen columns logo">
-                <a href="<?php echo Url::canonical()?>" title="Necha">
+                <a href="<?php echo Url::base() ?>" title="Necha">
                     <img src="images/logo.jpg" alt="Necha" />
                 </a>
             </div>
@@ -112,39 +97,15 @@ AppAsset::register($this);
                                 <li><a href="/collections/ipad-cases" title="iPad Cases">iPad Cases</a></li>
                                 <li><a href="/collections/11-macbook-cases" title="MacBook Cases">11" MacBook Cases</a></li>
                                 <li><a href="/collections/macbook-cases" title=" MacBook Cases">13" MacBook Cases</a></li>
-
-
-
                                 <li><a href="/collections/15-macbook-cases" title="MacBook Cases">15" MacBook Cases</a></li>
-
-
                             </ul>
                         </li>
-
-
-
                         <li><a href="/pages/get-involved" title="Get Involved" >Contact Us</a></li>
-
-
-
-
-
-
-                     
-                            <ul>
-
-
-                                <li><a href="/pages/spring-2016" title="Spring 2016">Spring 2016</a></li>
-
-
-
-                                <li><a href="/pages/summer-2016" title="Summer 2016">Summer 2016</a></li>
-
-
-                            </ul>
+                        <ul>
+                            <li><a href="/pages/spring-2016" title="Spring 2016">Spring 2016</a></li>
+                            <li><a href="/pages/summer-2016" title="Summer 2016">Summer 2016</a></li>
+                        </ul>
                         </li>
-
-
                     </ul>
                 </div>
             </div>
@@ -253,17 +214,7 @@ AppAsset::register($this);
 
                         <p>Della is a Los Angeles-based fashion line that is changing the way people shop. We are a woman-owned and woman-run business working directly with a community in West Africa, providing jobs, education and skills training to our employees. We are driven by awareness of the need for a global market that provides socially-responsible, quality products. We are not a charity; we are a business done &ndash; and doing &ndash; &ldquo;right.&rdquo;</p>
 
-
-
                         <div class="payment_methods">
-
-
-
-
-
-
-
-
 
                         </div>
 
@@ -277,27 +228,7 @@ AppAsset::register($this);
             </div>
         </div> <!-- end footer -->
 
-
-        <script type="text/javascript">
-            (function () {
-                var po = document.createElement('script');
-                po.type = 'text/javascript';
-                po.async = true;
-                po.src = 'https://apis.google.com/js/plusone.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(po, s);
-            })();
-        </script>
-        <script>!function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (!d.getElementById(id)) {
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }
-            }(document, "script", "twitter-wjs");</script>
-
-
     </body>
+    <?php $this->endBody() ?>
 </html>
+<?php $this->endPage() ?>
