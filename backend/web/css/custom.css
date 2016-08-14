@@ -12,3 +12,10 @@ and open the template in the editor.
     display: inline;
     max-height: 44px;
 }
+
+table.dataTable.no-footer {
+    border-bottom: none;
+}
+ul.nav li.dropdown:hover ul.dropdown-menu{
+    display: block;    
+}

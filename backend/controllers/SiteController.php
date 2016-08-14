@@ -60,7 +60,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = "necha";
         return $this->render('index');
     }
 

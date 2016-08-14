@@ -48,15 +48,15 @@ return [
             'class' => 'yii\web\UrlManager',
             'baseUrl' => '/necha/',
         ],
-//        'assetManager' => [
-//            'bundles' => [
-//                'yii\web\JqueryAsset' => [
-//                    'sourcePath' => 'js/jquery.min.js', // do not publish the bundle
-//                    'js' => [
-//                    ]
-//                ],
-//            ],
-//        ]
+        'assetManager' => [
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    //'sourcePath' => '', // do not publish the bundle
+                    'js' => [
+                    ]
+                ],
+            ],
+        ]
     ],
     'params' => $params,
 ];

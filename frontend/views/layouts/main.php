@@ -39,7 +39,7 @@ AppAsset::register($this);
         <!-- Stylesheets -->
 
         <!-- Icons -->
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
         <link rel="canonical" href="<?php echo Url::canonical(); ?>" />
 
         <!-- Custom Fonts -->
@@ -72,7 +72,7 @@ AppAsset::register($this);
         <div class="container content"> 
             <div class="sixteen columns logo">
                 <a href="<?php echo Url::base() ?>" title="Necha">
-                    <img src="images/logo.jpg" alt="Necha" />
+                    <img src="images/logo2.png" alt="Necha" />
                 </a>
             </div>
             <div class="sixteen columns clearfix">
